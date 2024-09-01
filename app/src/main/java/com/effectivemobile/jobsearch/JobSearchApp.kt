@@ -1,0 +1,51 @@
+package com.effectivemobile.jobsearch
+
+
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.effectivemobile.jobsearch.ui.screens.BottomNavBar
+import com.effectivemobile.jobsearch.ui.screens.MainScreen
+import com.effectivemobile.jobsearch.ui.screens.PlaceholderScreen
+import com.effectivemobile.jobsearch.ui.viewModels.VacanciesViewModel
+
+@Composable
+fun JobSearchApp(
+    modifier: Modifier = Modifier
+){
+    val navController = rememberNavController()
+    val vacanciesViewModel : VacanciesViewModel =
+        viewModel(factory = VacanciesViewModel.Factory)
+
+    Scaffold(
+        bottomBar = { BottomNavBar(navController) }
+    ) { innerPadding ->
+        NavHost(
+            navController = navController,
+            startDestination = "search",
+            modifier = Modifier.padding(innerPadding)
+        ) {
+            composable("search") {
+                MainScreen(
+                    vacanciesUiState = vacanciesViewModel.vacanciesUiState,
+                    modifier = modifier
+                )
+            }
+            composable("favorites") { /* Экран избранного */ }
+            composable("responses") {
+                PlaceholderScreen("Nothing")
+            }
+            composable("messages") {
+                PlaceholderScreen("Nothing")
+            }
+            composable("profile") {
+                PlaceholderScreen("Nothing")
+            }
+        }
+    }
+}
