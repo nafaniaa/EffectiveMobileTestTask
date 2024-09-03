@@ -23,4 +23,5 @@
     <string name="symbol2">*</string>
     <string name="logic">Здесь может быть логика для входа с паролем</string>
     <string name="sendCodeToEmail">Отправили код н а %1$s</string>
+    <string name="respond">Откликнуться\n</string>
 </resources>
