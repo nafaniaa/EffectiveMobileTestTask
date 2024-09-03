@@ -1,6 +1,5 @@
 package com.effectivemobile.jobsearch
 
-
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -14,6 +13,7 @@ import androidx.navigation.compose.rememberNavController
 import com.effectivemobile.jobsearch.ui.screens.BottomNavBar
 import com.effectivemobile.jobsearch.ui.screens.MainScreen
 import com.effectivemobile.jobsearch.ui.screens.PlaceholderScreen
+import com.effectivemobile.jobsearch.ui.screens.MainScreen
 import com.effectivemobile.jobsearch.ui.viewModels.VacanciesViewModel
 
 @Composable
@@ -59,6 +59,18 @@ fun JobSearchApp(
             composable("profile") {
                 PlaceholderScreen("Nothing")
             }
+        modifier = modifier
+            .fillMaxSize()
+    ) {
+        Surface(
+            modifier = modifier
+                .fillMaxSize()
+                .padding(it)
+        ) {
+            MainScreen(
+                vacanciesUiState = vacanciesViewModel.vacanciesUiState,
+                modifier = modifier
+            )
         }
     }
 }
