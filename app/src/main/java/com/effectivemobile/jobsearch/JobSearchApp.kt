@@ -1,8 +1,10 @@
 package com.effectivemobile.jobsearch
 
 
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -31,10 +33,21 @@ fun JobSearchApp(
             modifier = Modifier.padding(innerPadding)
         ) {
             composable("search") {
-                MainScreen(
-                    vacanciesUiState = vacanciesViewModel.vacanciesUiState,
+                Scaffold(
                     modifier = modifier
-                )
+                        .fillMaxSize()
+                ) {
+                    Surface(
+                        modifier = modifier
+                            .fillMaxSize()
+                            .padding(it)
+                    ) {
+                        MainScreen(
+                            vacanciesUiState = vacanciesViewModel.vacanciesUiState,
+                            modifier = modifier
+                        )
+                    }
+                }
             }
             composable("favorites") { /* Экран избранного */ }
             composable("responses") {

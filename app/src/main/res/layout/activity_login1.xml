@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding = "@dimen/login1_screen_padding"
+    android:background="@android:color/black">
+
+    <TextView
+        android:id="@+id/tv_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_login1"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/title_text_size_login1"/>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="150dp" />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corners"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/tv_search_job"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/job_search"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/text_edit_rounded_corners"
+            android:drawableStart="@drawable/resposes"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/tetxtLightGrey"
+            android:textSize="16sp"
+            android:drawablePadding="4dp"/>
+
+        <ImageView
+            android:id="@+id/ivClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/closesign"
+            android:visibility="gone"/>
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tv_email_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email_error"
+            android:textColor="@android:color/holo_red_light"
+            android:visibility="gone"
+            android:paddingTop="4dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:id="@+id/btn_continue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/continue_button"
+                android:textSize="12sp"
+                android:backgroundTint="@color/darkBlueButton"
+                android:textColor="@android:color/white"
+                android:enabled="false"/>
+
+            <Button
+                android:id="@+id/btn_login_with_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/with_password"
+                android:textSize="12sp"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@color/darkBlueButton"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="32dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corners"
+        android:paddingBottom="16dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_search_employee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search_for_employees"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_employee_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/placement_of_vacancies"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:paddingBottom="16dp"/>
+
+        <Button
+            android:id="@+id/btn_search_employee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/search_employees"
+            android:backgroundTint="@color/greenButton"
+            android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+</LinearLayout>
