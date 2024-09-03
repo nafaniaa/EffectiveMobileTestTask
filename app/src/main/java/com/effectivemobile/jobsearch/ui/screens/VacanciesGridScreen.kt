@@ -13,9 +13,7 @@ fun VacanciesGridScreen(
     vacancies: List<Vacancy>,
     modifier: Modifier
 ){
-    LazyColumn(
-        contentPadding = PaddingValues(4.dp)
-    ){
+    LazyColumn(){
         itemsIndexed(vacancies){ _, vacancy ->
             VacancyCard(vacancy = vacancy, modifier = modifier)
         }
