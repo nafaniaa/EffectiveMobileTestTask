@@ -25,7 +25,7 @@ class NetworkVacanciesRepository(
             isFavorite = vacancies.isFavorite,
             salary = vacancies.salary,
             schedules = vacancies.schedules,
-            appliesNumber =  vacancies.appliedNumber,
+            appliesNumber =  vacancies.appliesNumber,
             description = vacancies.description,
             responsibilities = vacancies.responsibilities,
             questions = vacancies.questions

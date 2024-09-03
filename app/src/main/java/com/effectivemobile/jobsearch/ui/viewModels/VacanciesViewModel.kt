@@ -13,6 +13,7 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.effectivemobile.jobsearch.JobSearchApplication
 import com.effectivemobile.jobsearch.data.Vacancy
 import com.effectivemobile.jobsearch.data.repositories.VacanciesRepository
+import com.effectivemobile.jobsearch.utils.Constants
 import kotlinx.coroutines.launch
 import java.io.IOException
 
@@ -30,9 +31,9 @@ class VacanciesViewModel(
         private set
 
     init {
-        getVacancies("", "")
+        getVacancies()
     }
-    fun getVacancies(id: String, export: String){
+    fun getVacancies(id: String = Constants.id, export: String = Constants.export){
         viewModelScope.launch {
             vacanciesUiState = VacanciesUiState.Loading
             vacanciesUiState = try{
