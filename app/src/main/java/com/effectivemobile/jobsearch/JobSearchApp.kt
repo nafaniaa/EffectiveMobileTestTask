@@ -15,6 +15,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.effectivemobile.jobsearch.ui.screens.BottomNavBar
+import com.effectivemobile.jobsearch.ui.screens.FavoritesScreen
 import com.effectivemobile.jobsearch.ui.screens.MainScreen
 import com.effectivemobile.jobsearch.ui.screens.PlaceholderScreen
 import com.effectivemobile.jobsearch.ui.screens.MainScreen
@@ -55,7 +56,14 @@ fun JobSearchApp(
                     }
                 }
             }
-            composable("favorites") { /* Экран избранного */ }
+            composable("favorites") {
+                Surface(
+                    modifier = modifier
+                        .fillMaxSize()
+                ) {
+                    FavoritesScreen()
+                }
+            }
             composable("responses") {
                 PlaceholderScreen("Nothing")
             }

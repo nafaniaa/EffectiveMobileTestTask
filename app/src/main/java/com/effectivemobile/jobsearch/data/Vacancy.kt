@@ -13,7 +13,7 @@ data class Vacancy(
     @SerializedName("company")val company: String?,
     @SerializedName("experience")val experience: Experience?,
     @SerializedName("publishedData")val publishedDate: String?,
-    @SerializedName("isFavorite")val isFavorite: Boolean?,
+    @SerializedName("isFavorite") var isFavorite: Boolean?,
     @SerializedName("salary")val salary: Salary?,
     @SerializedName("schedules")val schedules: ArrayList<String>,
     @SerializedName("appliesNumber")val appliesNumber: Int?,
