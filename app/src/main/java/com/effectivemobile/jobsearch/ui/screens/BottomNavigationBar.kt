@@ -1,17 +1,22 @@
 package com.effectivemobile.jobsearch.ui.screens
 
+import androidx.compose.foundation.background
 import androidx.compose.material3.Badge
 import androidx.compose.material3.BadgedBox
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.effectivemobile.jobsearch.R
@@ -33,13 +38,13 @@ fun BottomNavBar(
         BottomNavItem("search", R.drawable.search_unselected, R.string.search),
         BottomNavItem("favorites", R.drawable.favorite_unselected, R.string.favorites, 1),
         BottomNavItem("responses", R.drawable.resposes, R.string.responses),
-        BottomNavItem("messages", R.drawable.message, R.string.messages),
+        BottomNavItem("messages", R.drawable.mesagepng, R.string.messages),
         BottomNavItem("profile", R.drawable.profile, R.string.profile)
     )
 
     NavigationBar(
-        containerColor = Color.Black,
-        contentColor = Color.White
+        containerColor = MaterialTheme.colorScheme.background,
+        contentColor = Color.LightGray
     ) {
         val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
         items.forEach { item ->
@@ -49,7 +54,11 @@ fun BottomNavBar(
                         badge = {
                             if (item.badgeCount > 0) {
                                 Badge {
-                                    Text(item.badgeCount.toString())
+                                    Text(
+                                        item.badgeCount.toString(),
+                                        modifier = Modifier
+                                            .background(MaterialTheme.colorScheme.onBackground)
+                                    )
                                 }
                             }
                         }
@@ -60,7 +69,12 @@ fun BottomNavBar(
                         )
                     }
                 },
-                label = { Text(stringResource(id = item.label)) },
+                label = {
+                    Text(
+                        stringResource(id = item.label),
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.Light
+                    ) },
                 selected = currentRoute == item.route,
                 onClick = {
                     navController.navigate(item.route) {
@@ -74,10 +88,11 @@ fun BottomNavBar(
                     }
                 },
                 colors = NavigationBarItemDefaults.colors(
-                    selectedIconColor = Color.Blue,
-                    unselectedIconColor = Color.Gray,
-                    selectedTextColor = Color.Blue,
-                    unselectedTextColor = Color.Gray
+                    selectedIconColor = MaterialTheme.colorScheme.tertiary,
+                    unselectedIconColor = Color.LightGray,
+                    selectedTextColor = MaterialTheme.colorScheme.tertiary,
+                    unselectedTextColor = Color.LightGray,
+                    indicatorColor = MaterialTheme.colorScheme.background
                 )
             )
         }

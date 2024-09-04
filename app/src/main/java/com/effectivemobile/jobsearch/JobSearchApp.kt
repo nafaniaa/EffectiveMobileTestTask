@@ -3,6 +3,7 @@ package com.effectivemobile.jobsearch
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
@@ -14,6 +15,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.effectivemobile.jobsearch.ui.screens.BottomNavBar
+import com.effectivemobile.jobsearch.ui.screens.FavoritesScreen
 import com.effectivemobile.jobsearch.ui.screens.MainScreen
 import com.effectivemobile.jobsearch.ui.screens.PlaceholderScreen
 import com.effectivemobile.jobsearch.ui.screens.MainScreen
@@ -23,7 +25,7 @@ import com.effectivemobile.jobsearch.ui.viewModels.VacanciesViewModel
 fun JobSearchApp(
     modifier: Modifier = Modifier
         .fillMaxSize()
-        .background(Color(12, 12, 12, 1))
+        .background(MaterialTheme.colorScheme.background)
 ) {
     val navController = rememberNavController()
     val vacanciesViewModel: VacanciesViewModel =
@@ -54,7 +56,14 @@ fun JobSearchApp(
                     }
                 }
             }
-            composable("favorites") { /* Экран избранного */ }
+            composable("favorites") {
+                Surface(
+                    modifier = modifier
+                        .fillMaxSize()
+                ) {
+                    FavoritesScreen()
+                }
+            }
             composable("responses") {
                 PlaceholderScreen("Nothing")
             }

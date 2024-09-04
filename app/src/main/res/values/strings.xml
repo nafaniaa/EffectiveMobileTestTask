@@ -24,4 +24,7 @@
     <string name="logic">Здесь может быть логика для входа с паролем</string>
     <string name="sendCodeToEmail">Отправили код н а %1$s</string>
     <string name="respond">Откликнуться\n</string>
+    <string name="moreVacanciesButtonText">Ещё %1$s вакансии</string>
+    <string name="searchHelp">Должность, ключевые слова</string>
+    <string name="filter_button">filter button</string>
 </resources>
