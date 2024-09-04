@@ -28,7 +28,8 @@ private val LightColorScheme = lightColorScheme(
     secondary = green,
     background = backgroundColor,
     error = Color.Red,
-    tertiary = specialBlue
+    tertiary = specialBlue,
+    onBackground = specialRed
 )
 
 @Composable
