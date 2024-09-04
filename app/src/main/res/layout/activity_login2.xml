@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@android:color/black">
+
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="180dp"/>
+
+
+    <TextView
+        android:id="@+id/tv_code_sent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send_code"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:paddingBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/tv_code_instructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/explanation"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:paddingBottom="16dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_code_1"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/rounded_corners"
+            android:inputType="number"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:maxLength="1"
+            android:hint="@string/symbol1"
+            android:textColorHint="@color/tetxtLightGrey"
+            android:textAlignment="center"/>
+
+        <Space
+            android:layout_width="12dp"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/et_code_2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/rounded_corners"
+            android:inputType="number"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:maxLength="1"
+            android:hint="@string/symbol2"
+            android:textColorHint="@color/tetxtLightGrey"
+            android:textAlignment="center"/>
+
+        <Space
+            android:layout_width="12dp"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/et_code_3"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/rounded_corners"
+            android:inputType="number"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:maxLength="1"
+            android:hint="@string/symbol2"
+            android:textColorHint="@color/tetxtLightGrey"
+            android:textAlignment="center"/>
+
+        <Space
+            android:layout_width="12dp"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/et_code_4"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/rounded_corners"
+            android:inputType="number"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:maxLength="1"
+            android:hint="@string/symbol2"
+            android:textColorHint="@color/tetxtLightGrey"
+            android:textAlignment="center"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/confirm"
+        android:backgroundTint="@color/darkBlueButton"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="32dp"
+        android:enabled="false"/>
+</LinearLayout>
